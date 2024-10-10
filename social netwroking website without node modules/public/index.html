@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>GamingTok</title>
+        <link rel="stylesheet" type="text/css" href="/CSS/stylesheet.css">
+    </head>
+<body>
+
+
+    <header>
+        <h1>GamingTok</h1>
+        <!-- Main buttons for the website header such as login, register, post, and profile button which when pressed a modal will popup -->
+        
+            <div class="popup-container">
+                <button onclick="showPopup('loginPopup')">Login</button>
+                <button onclick="showPopup('registerPopup')">Register</button>
+                <button onclick="showPopup('blogPopup')">Post</button>
+                <button onclick="showPopup('profilePopup')">Profile</button> <!-- Replaced 'newsPopup' with 'profilePopup' -->
+            </div>
+            <!-- Search bar in the header HTML -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="searchButton">Search</button>
+            </div>
+       
+    </header>
+    
+  
+
+
+<!-- Login Modal -->
+<div id="loginPopup" class="modal">
+    <div class="modal-content">
+        <!-- 'x' in the corner which will close the Modal-->
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <h2>Login</h2>
+        <div class="form-container">
+            <!-- login form  -->
+            <form onsubmit="handleLoginFormSubmit(event)" id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- The login message will be displayed here -->
+            <div id="loginMessage" style="color: green;"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Register Modal -->
+<div id="registerPopup" class="modal">
+    <div class="modal-content">
+        <!-- 'x' in the corner which will close the Modal-->
+        <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+        <h2>Register Now</h2>
+        <div class="form-container">
+            <!-- register form  -->
+            <form onsubmit="return handleRegisterFormSubmit()">
+                <label for="newUsername">Create a Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newPassword">Create a Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <label for="newEmail">Enter an email:</label>
+                <input type="email" id="newEmail" name="newEmail" required>
+
+                <label for="newPhone">Enter your Phone Number:</label>
+                <input type="text" id="newPhone" name="newPhone">
+
+                <label for="newAge">Enter your Age:</label>
+                <input type="number" id="newAge" name="newAge">
+
+                <button type="submit">Register</button>
+            </form>
+
+            <div id="registrationMessage" style="color: green;"></div>
+        </div>
+    </div>
+</div>
+
+<div id="blogPopup" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closePopup('blogPopup')">&times;</span>
+      <h2>Create a Blog Post</h2>
+      <form id="blogPostForm">
+        <label for="blogCaption">Add A Caption:</label>
+        <input type="text" id="blogCaption" name="blogCaption" required>
+        <label for="fileInput">Upload Image:</label>
+        <input type="file" id="fileInput" name="file" accept="image/*">
+        <input type="submit" value="Create Post">
+      </form>
+      <div id="postMessage"></div>
+    </div>
+  </div>
+
+<!--News Modal-->
+<div id="newsPopup" class="modal">
+    <div class="modal-content">
+         <!--  'x' in the corner which will close the Modal-->
+        <span class="close" onclick="closePopup('newsPopup')">&times;</span>
+        <h2>Latest News</h2>
+        <div id="newsContent">
+            <!-- News content will be dynamically populated here -->
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Profile Modal -->
+<div id="profilePopup" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePopup('profilePopup')">&times;</span>
+        <!-- Profile content goes here -->
+        <div class="profile-section">
+            <!-- Profile picture -->
+            <img src="/images/bugatti.jpg" alt="Profile Picture">
+            <h3>@Telostcheese85</h3>
+            <div class="profile-info">
+                <p>Followers: 20M</p>
+                <p>Following: 10</p>
+                <p>Likes: 50M</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="photo-sharing-container">
+    <div class="photo-box">
+      <div class="photo-header">
+        <div class="user-info">
+          <span class="user-name">@username</span>
+        </div>
+        <div class="post-info">
+          <span class="post-date">April 9, 2023</span>
+          <span class="blogCaption" id="blogCaption-2"></span>
+        </div>
+      </div>
+      <div class="photo-content" id="photoContent">
+        <!-- Uploaded image will be displayed here -->
+      </div>
+      <div class="photo-actions">
+        <button class="like-btn">
+          <i class="fa fa-heart"></i>
+          <span class="like-count">🩷</span>
+        </button>
+        <button class="comment-btn">
+          <i class="fa fa-comment"></i>
+          <span class="comment-count">💬</span>
+        </button>
+        <button class="share-btn">
+          <i class="fa fa-share-alt">📲</i>
+        </button>
+        <button class="follow-btn">➕</button>
+      </div>
+    </div>
+  </div>
+
+
+  
+<!-- Comment Modal -->
+<div id="commentModal" class="modal">
+    <div class="modal-content">
+         <!--  'x' in the corner which will close the Modal-->
+        <span class="close" onclick="closePopup('commentModal')">&times;</span>
+        <h2>Add a Comment</h2>
+        <textarea id="commentText" placeholder="Type your comment here..."></textarea>
+        <button onclick="submitComment()">Submit Comment</button>
+    </div>
+</div>
+
+
+
+        <!--link JavaScript with html-->
+        <script src="/JS/javascript.js"></script>    
+</body>
+</html>

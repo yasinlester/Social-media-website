@@ -1,0 +1,517 @@
+/*import of fonts from google fonts*/
+/*link for honk font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Honk:SHLN@100&family=Luckiest+Guy&display=swap');
+  /* link for luckiest guy font*/
+  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap'); 
+
+
+
+/*CSS for the body of the html such as background*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image:url("../images/samsung_desktop_image_4k_hd_samsung.jpg"); /*css code for background*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+  }
+
+ /*CSS for the header bar*/ 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/*CSS for H1 text*/
+h1 {
+    font-family: 'Honk', sans-serif; /* 'Honk' font for h1 */
+    margin: 0;
+    font-size: 30px;
+}
+
+/*CSS for main buttons in the headrr bar such as login,register,post and news*/
+main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow main to grow and center buttons */
+    justify-content: center;
+    margin-left: 452px;
+}
+
+/*CSS for the postion of the search container*/
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Moves the search container to the right */
+    
+}
+
+/*CSS for the input cotainer of the search bar*/
+input {
+    padding: 8px;
+    margin-right: 8px;
+    border-radius: 1000px;
+    border: 3px solid black;
+    outline: none;
+}
+
+/*CSS for the main buttons*/
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color:#2980b9;
+    color: #fff;
+    border: 3px solid black; 
+    border-radius: 100px;
+    vertical-align: middle;
+    font-family:luckiest guy;
+}
+
+/*CSS for the button hover*/
+button:hover {
+    background-color: cornflowerblue;
+}
+
+
+/* Modal container CSS  */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*CSS for the modal design such as back ground colour and size of container*/
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/*CSS for the cross button in the corner of the modal*/
+.close {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/*CSS for cross button to go red when user hovers over it*/
+.close:hover,
+.close:focus {
+    color: #e74c3c;
+}
+
+/*Login and register modal Form Style */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*size of Modal container css*/
+.form-container form {
+    width: 100%;
+    max-width: 400px;
+}
+
+/*Css label for the form*/
+.form-container label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/*CSS for the the input containers of the form input*/
+.form-container input {
+    width: 100%;
+    padding: 8px; /* Adjusted padding */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/*CSS of the form login and register button*/
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/*Css for the user hovers over the login or register button it goes to conrflower blue*/
+.form-container button:hover {
+    background-color: cornflowerblue;
+}
+
+/*CSS for the font of the login and register button*/
+#loginPopup button,
+#registerPopup button {
+    font-family: 'Your Login and Register Font', sans-serif;}
+
+/*CSS for the comment Modal*/
+#commentModal textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+/*the comment button CSS*/
+#commentModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Your Submit Comment Font', sans-serif;
+}
+
+/*Css for the user hovers over the comment button it goes to conrflower blue*/
+#commentModal button:hover {
+    background-color: cornflowerblue;
+}
+
+/*  CSS to style blog post modal */
+#blogPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*CSS for the blog popup modal container*/
+#blogPopup .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/*CSS for the cross button in the corner of the modal*/
+#blogPopup .close {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/*CSS for cross button to go red when user hovers over it*/
+#blogPopup .close:hover,
+#blogPopup .close:focus {
+    color: #e74c3c;
+}
+/*CSS for the h2 text*/
+#blogPopup h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/*CSS for the blogpopup label*/
+#blogPopup label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+ 
+/*CSS to  ensure a uniform look for text input fields, file inputs, and textareas within the #blogPopup container.*/
+#blogPopup input[type="text"],
+#blogPopup input[type="file"],
+#blogPopup textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+/*Submit blog button CSS*/
+#blogPopup input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/*CSS for the user hovers over the submit button it goes to conrflower blue*/
+#blogPopup input[type="submit"]:hover {
+    background-color: cornflowerblue;
+}
+
+/*CSS for news popup modal*/
+#newsPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*CSS design for modal news modal popup*/
+#newsPopup .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/*CSS for the cross button in the corner of the modal*/
+#newsPopup .close {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/*CSS for cross button to go red when user hovers over it*/
+#newsPopup .close:hover,
+#newsPopup .close:focus {
+    color: #e74c3c;
+}
+
+/*CSS for the text in the news popup modal*/
+#newsPopup h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/*CSS fo the news contenet*/
+#newsPopup #newsContent {
+    margin-top: 20px;
+}
+
+
+
+/* CSS for profile picture of the user */
+.profile-section img {
+    width: 100px; /* Increase width */
+    height: 100px; /* Increase height */
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Increase margin-bottom */
+    border: 3px solid black; /* Increase border thickness */
+}
+
+/* CSS for profile info */
+.profile-section .profile-info {
+    margin-top: 10px;
+}
+
+/* Adds margin between each paragraph */
+.profile-section .profile-info p {
+    margin-bottom: 8px; /* Increase margin-bottom for better separation */
+}
+
+
+/* Style for the Direct Message container */
+.dm-container {
+    width: 300px;
+    height: 300px;
+    margin: -1674px 1117px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f0f2f5; /* Light gray background similar to Facebook */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Add scrollbar  */
+    border: 3px solid black; 
+}
+
+/* Style for the Message Heading */
+.message-heading {
+    font-size: 18px;
+    color:#2980b9; 
+    margin-bottom: 10px; /* Adds some spacing below the heading */
+}
+
+/* Style for the User Messages container */
+.user-messages {
+    flex-grow: 1;
+    overflow-y: auto; /* Adds a scrollbar  */
+}
+
+/* Style for the individual messages */
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff; /* White background for messages */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style for the profile pictures of the other users in the direct message box*/
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Style for the message content */
+.message-content {
+    flex-grow: 1;
+}
+
+/* Style for the user name in the message */
+.user-name {
+    margin-bottom: 5px;
+    color: #2980b9; 
+}
+
+/* Style for the message text */
+.message-text {
+    margin: 0;
+    color: #000;
+}
+
+/* Message hover background color */
+.message:hover {
+    background-color: lightblue 
+}
+.photo-sharing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 0;
+    position: fixed; /* Keep it fixed */
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid black;
+  }
+  
+  /* CSS for the user post inside the photo-sharing container */
+  .photo-sharing-container img {
+    max-width: 100%;
+    max-height: 400px; /* Adjust the max-height to your desired value */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+  }
+
+ /* Style for the photo caption */
+.photo-sharing-container .blogCaption {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px; /* Adjust as needed */
+  /* Add any other styles you want to apply */
+}
+
+  
+  
+  /* Adds space between the image and symbols */
+  .photo-sharing-container .photo-actions {
+    margin-top: 10px;
+  }
+  
+  /* Style the symbol buttons */
+  .photo-sharing-container .symbol-btn {
+    font-size: 24px; /* Adjust the size of the symbols */
+    cursor: pointer; /* pointer cursor to indicate interactivity */
+    margin-right: 40px; /* Adds space between the symbols */
+    padding: 5px 10px; /* Add padding to the buttons */
+    border-radius: 5px; /* Add border radius to the buttons */
+  }
+  
+  /* Adjusts the color of the like button */
+  .photo-sharing-container .photo-actions .symbol-btn.photo-like-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  /* Adjusts the color for the comment button */
+  .photo-sharing-container .photo-actions .symbol-btn.photo-comment-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  /* Adjust the color for the share button */
+  .photo-sharing-container .photo-actions .symbol-btn.photo-share-btn {
+    background-color: blue;
+    color: white;
+  }
+  
+  /* Style for the photo caption */
+  .photo-sharing-container .post-caption {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px; /* Adjust as needed */
+    /* Add any other styles you want to apply */
+  }
