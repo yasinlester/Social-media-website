@@ -1,6 +1,7 @@
-amerConnect: Social Media for Gamers
 Project Overview
-GamerConnect (also known as Gamingtok) is a single-page social media platform designed exclusively for gamers to share their achievements, interact with fellow gaming enthusiasts, and stay updated on gaming news. This project was developed as part of the CST2120 coursework and received a grade of 77/100, achieving a First-class distinction.
+
+Gamingtok is a single-page social media platform designed exclusively for gamers to share their achievements, interact with fellow gaming enthusiasts, and stay updated on gaming news. This project was developed as part of the CST2120 coursework and received a grade of 77/100, achieving a First-class distinction.
+
 The primary goal of this project was to create a gaming community where users could follow other players and content creators. While some features like direct messaging and video calls weren't implemented due to time and skill constraints, the core functionality of account creation, login, and sharing accomplishments is in place.
 Project Demonstration
 
